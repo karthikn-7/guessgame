@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1 id="head">Guess the number!</h1><br><br><br><hr id="line1">
+<input id="guessnumber" placeholder="Guess a number"><br><br>
+<button onclick="check()">check</button>
+<p id="result">Right Or Wrong</p>
+<p id="totalscore">score:5</p>
+
+<hr id="line">
+<p id="endtex">Devoloped by karthi_kn <br> Share it with your friends</p>
+
+
+<script>
+    var guessnumber = document.getElementById("guessnumber")
+    var result = document.getElementById("result")
+    var totalscore = document.getElementById("totalscore")
+    var randomnumber = Math.floor(Math.random()*10)+1
+    var score = 5
+    function check()
+    {
+       
+        if(guessnumber.value==randomnumber)
+        {
+            result.textContent= "Your Answer Is Correct"
+            console.log("right")
+            alert("You won the game! PlayAgain")
+            location.reload()
+        }
+        else
+        {
+            score = score-1
+            totalscore.textContent= "score: "+score
+            result.textContent= "Try Again!"
+            console.log("wrong")
+
+            if(score== 0)
+            {
+                alert("game over")
+                location.reload()
+            }
+            
+        }
+        
+    }
+
+
+
+</script>
+</body>
+</html>
+
